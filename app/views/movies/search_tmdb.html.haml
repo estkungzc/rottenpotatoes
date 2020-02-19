@@ -1,0 +1,23 @@
+%h1 Search TMDb for a movie
+
+%table
+  %thead
+    %tr
+      %th Movie Title
+      %th Original Title
+      %th Vote Average
+      %th Popularity
+      %th Release Date
+      %th 
+      %th Description
+  %tbody
+    - @tmdb.each do |movie|
+      %tr
+        %td= movie.title
+        %td= movie.original_title
+        %td= movie.vote_average
+        %td= movie.popularity
+        %td= movie.release_date
+        %td
+          = image_tag("https://image.tmdb.org/t/p/w92/#{movie.poster_path}")
+        %td= movie.overview
