@@ -1,0 +1,18 @@
+- if @review.all.length > 0
+    %h1= "All Review for #{@review[0].movie.title}"
+    %table#movies
+        %thead
+            %tr
+                %th Potatoes-Rating
+                %th Reviewer
+                %th Release Date
+                %th Comments
+        %tbody
+            - @review.each do |r|
+                %tr
+                    %td= image_tag("walnut", width: "32") * r.potatoes
+                    %td= r.moviegoer.name
+                    %td= r.created_at.to_s(:long)
+                    %td= r.comments
+- else
+    %h1 Not found review

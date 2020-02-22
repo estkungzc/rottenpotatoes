@@ -8,9 +8,8 @@
 
   %body
     %h1.title= link_to 'Rotten Potatoes!', movies_path
-    - if flash[:notice]
-      #notice.message= flash[:notice]
-    - elsif flash[:warning]
-      #warning.message= flash[:warning]
+    .container-fluid
+      = render :partial=>'sessions/login'
+      = render :partial=>'layouts/alert'
     #main
       = yield
